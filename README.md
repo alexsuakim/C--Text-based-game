@@ -1,2 +1,2 @@
-# hello-world
+# project proposal
 first repository on github
