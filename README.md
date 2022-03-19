@@ -1,5 +1,6 @@
 # project proposal
-first repository on github
 
-
-Boyeong Choi
+1. Group Members:
+  Soo-ah Kim (3035661061)
+  Boyeong Choi ()
+2. 
