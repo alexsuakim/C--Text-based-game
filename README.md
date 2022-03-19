@@ -18,3 +18,23 @@
   The rounds continue until one of the players have no chips left.
   
   
+ 4. List of features 
+  - Random generator of one card from each player’s deck (from A ~ 10)
+       (1) generation of random numbers from 1 to 10 to select a card
+  - Storing cards used into an array 
+       (2) use an array to keep track of the cards randomly generated in previous rounds
+  - Time limit: the user has to bet within 15 seconds for each round
+  - Store the user and computer's arrays of random generated cards of each round in the heap
+       (3) dynamic memory management
+  - Saving the user's play record (to accumulate the number of win / lose rounds)
+       (4) file intput to call previous txt file
+       (4) file output to update the txt file after the user's rounds
+  - Computer betting algorithm about how to deal with the user’s choice
+       (4) implement the algorithm file into the main file
+  - The <main function file> calls the <computer betting algorithm function file> 
+       (5) program codes in multiple files
+  - Header file, Makefile for automating compiling process
+       (5) program codes in multiple files
+  
+ 
+  
