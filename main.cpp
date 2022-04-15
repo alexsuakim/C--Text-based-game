@@ -72,19 +72,71 @@ void roundGame(int round, char betFirst, int userDeck[], int compDeck[], int & u
     cout << setw(21) << "user:  " << userChip << " chip(s) left." << endl;
     cout << setw(21) << "computer:  " << compChip << " chip(s) left." << endl << endl;
 
+    //the minimum bet for each round is 1 chip.
+    userChip--;
+    compChip--;
+    int userBetTotal = 1;
+    int compBetTotal = 1;
+    
     //take input from the first player.
-    int input;
-    if (betFirst == 'u'){
-        input = int_userInput();
+    int int_input;
+    char char_input;
+    
+    //if betfirst == user then it is an even number.
+    if (betFirst % 2 == 0){
+        //ask if the user wants to give up or bet.
+        //if give up, reveal user's bet. Then the computer wins user's and computer's total bet and the round ends.
+        //if bet,
+        int_input = int_userInput();
         userChip -= input;
+        userBetTotal += input;
+        betFirst++;
         cout << "the user has bet " << input << " chip(s)." << endl;
+        cout << "your total bet: " << userBetTotal << endl;
+        cout << "computer's total bet: " << compBetTotal << endl << endl;
     }
+    
+    //else if betfirst == computer then it is an odd number.
     else{
-        input = int_compInput();
+        //ask if computer wants to give up or bet.
+        //ig give up, reveal user's bet. Then the user wins user's and computer's total bet and the round ends.
+        //if bet,
+        int_input = int_compInput();
         compChip -= input;
+        compBetTotal += input;
+        betfirst++;
         cout << "the computer has bet " << input << " chip(s)." << endl;
+        cout << "your total bet: " << userBetTotal << endl;
+        cout << "computer's total bet: " << compBetTotal << endl << endl;
     }
-
+    
+    //keep getting input until both players' total bets are equal.
+    while (userBetTotal != compBetTotal){
+        if (betFirst % 2 == 0){
+            char_input = char_userInput();
+            if (char_input == 'g'){
+                //update betTotal, so that the betTotals of both players are equal and the while loop ends.
+                //reveal user's bet.
+                //the computer wins user's and computer's  total bet and the round ends.
+            }
+            else if (char_input == 's'){
+                //update betTotal, so that the betTotals of both players are equal and the while loop ends.
+                //reveal user's bet.
+                //compare the cards of both players and decide the winner.
+                //The winner wins user's and computer's  total bet and the round ends.
+            }
+            else if (char_input == 'h'){
+                //call int_userInput function to ask for the number of chips to add on.
+                int_input = int_userInput();
+                //betFirst ++;
+                //update chip and betTotal.
+                //continue onto the while loop, because betTotals of both players are not equal.
+            }
+        }
+        else {
+            
+        }
+    }
 
 
 
@@ -116,7 +168,7 @@ int main(){
     generateDeck(compDeck);
 
     //decide who bets first. The player with the higher random generated card bets first.
-    char betFirst;
+    int betFirst;
     cout << "let's decide who bets first. The player with a higher card will get to bet first." << endl;
     int user = rand() % 10 + 1;
     int comp = rand() % 10 + 1;
@@ -128,11 +180,11 @@ int main(){
     //print the cards and who bets first.
     cout << "Your card is " << user << ". Computer's card is " << comp << "." << endl;
     if (user > comp){
-        betFirst = 'u';
+        betFirst = 0; //even number if it's the user's turn to bet.
         cout << "You can bet first." << endl<< endl;
     }
     else{
-        betFirst = 'c';
+        betFirst = 1; // odd number if it's the computer's turn to bet.
         cout << "The computer bets first." << endl<<endl;
     }
 
