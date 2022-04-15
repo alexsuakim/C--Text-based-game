@@ -34,6 +34,7 @@ void generateDeck(int deck[])
 
 int main(){
     
+    srand(time(NULL));
     //create 2 decks: userDeck and compDeck
     int userDeck[10];
     int compDeck[10];
