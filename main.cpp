@@ -2,13 +2,18 @@
 #include <cstdlib>
 #include <random>
 #include <ctime>
+#include <iomanip>
 
 using namespace std;
 
-void userInput (){
+//take input within 10 seconds.
+//input (g/s/h). g = give up. s = bet the same amount. h = bet higher.
+char userInput (){
 
 }
 
+
+//computer algorithm on betting.
 void compInput (){
 
 }
@@ -34,10 +39,37 @@ void generateDeck(int deck[])
     }
 }
 
+void roundGame(int round, int userDeck[], int compDeck[], int & userChip, int & compChip){
+    
+    //print useful information (computer's card, user & computer's remaining number of chips).
+    cout << setw(21) << "computer's card is:  " << compDeck[round] << endl;
+    cout << setw(21) << "user:  " << userChip << " chip(s) left." << endl;
+    cout << setw(21) << "computer:  " << compChip << " chip(s) left." << endl;
+    
+    //take input from the user.
+    //char user_input = userInput();
+    char user_input;
+    cin >> user_input;
+    
+    /*if (user_input == 'g'){
+        cout <<    
+    }*/
+    
+    //if user inputs h, input how many chips higher than the current amount the user will bet.
+    
+    
+}
+
 int main(){
     
-    //create random seed using time.
+    //print the game's rule for the user.
+    
+    //generate random seed using current time.
     srand(time(NULL));
+    
+    //both players receive 20 chips each.
+    int userChip = 20;
+    int compChip = 20;
     
     //create 2 decks: userDeck and compDeck.
     int userDeck[10];
@@ -46,8 +78,31 @@ int main(){
     //generate the 10 cards in each deck.
     generateDeck(userDeck);
     generateDeck(compDeck);
-
-
+    
+    //decide who bets first. The player with the higher random generated card bets first.
+    cout << "let's decide who bets first. The player with a higher card will get to bet first." << endl;
+    int user = rand() % 10 + 1;
+    int comp = rand() % 10 + 1;
+    
+    while (user == comp){
+        int user = rand() % 10 + 1;
+        int comp = rand() % 10 + 1;
+    }
+    
+    cout << "Your card is " << user << ". Computer's card is " << comp << "." << endl;
+    if (user > comp){
+        cout << "You can bet first." << endl;
+    }
+    else{
+        cout << "The computer bets first." << endl;
+    }
+    
+    //round continues until all 20 cards are used, or until a player looses all chips.
+    for (int round = 0; round < 10; round++){
+        if (userChip != 0 && compChip != 0){
+            roundGame(round, userDeck, compDeck, userChip, compChip);
+        }
+    }
     return 0;
 
 
