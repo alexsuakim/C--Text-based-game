@@ -13,43 +13,36 @@ void compInput (){
 
 }
 
-int generate_card(int deck[], int i){
-    srand((unsigned int) time(NULL));
-    int card = rand() % 10 + 1;
-    for (int j = 0; j < i - 1; j++){
-        if (card == deck[j]){
-            generate_card(deck, card);
-        }
+//generate cards in Deck
+void generateDeck(int deck[])
+{
+    //fill in the 10 cards in the deck 
+    for (int i = 0; i < 10; i++){
+        deck[i] = i + 1;
     }
-    return card;
-}
 
-void generate_deck(int deck[]){
-    int card;
-    srand((unsigned int) time(NULL));
-    card = rand() % 10 + 1;
-    deck[0] = card;
-    for (int i = 1; i < 10; i++){
-        card = generate_card(deck, i);
-        deck[i] = card;
+    //shuffle the cards in deck
+    for (int i = 0; i < 9; i++)
+    {
+        int j = rand() % 10;
+        //swap the two cards in deck
+        int temp = deck[j];
+        deck[j] = deck[i];
+        deck[i] = temp;
     }
 }
 
 int main(){
+    
+    //create 2 decks: userDeck and compDeck
     int userDeck[10];
     int compDeck[10];
-    generate_deck(userDeck);
-    generate_deck(compDeck);
+    
+    //generate the 10 cards in each deck
+    generateDeck(userDeck);
+    generateDeck(compDeck);
 
-    cout << "userDeck: " << endl;
-    for (int i = 0; i < 10; i++){
-        cout << userDeck[i] << endl;
-    }
 
-    cout << "compDeck: " << endl;
-    for (int i = 0; i < 10; i++){
-        cout << compDeck[i] << endl;
-    }
     return 0;
 
 
