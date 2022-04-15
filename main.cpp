@@ -83,12 +83,12 @@ int main(){
     cout << "let's decide who bets first. The player with a higher card will get to bet first." << endl;
     int user = rand() % 10 + 1;
     int comp = rand() % 10 + 1;
-    
+    //generate random cards until the user's card and the computer's card are different.
     while (user == comp){
         int user = rand() % 10 + 1;
         int comp = rand() % 10 + 1;
     }
-    
+    //print the cards and who bets first.
     cout << "Your card is " << user << ". Computer's card is " << comp << "." << endl;
     if (user > comp){
         cout << "You can bet first." << endl;
