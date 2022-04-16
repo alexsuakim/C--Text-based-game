@@ -20,7 +20,7 @@
   
  4. List of features 
   - Random generator of one card from each player’s deck (from 1 ~ 10)
-       (1) generation of random numbers from 1 to 10 to select a card
+       (1) generation of numbers from 1 to 10 and randomly shuffle their order in an array 
   - Storing cards used into an array 
        (2) use an array to keep track of the cards randomly generated in previous rounds
   - Time limit: the user has to bet within 10 seconds for each round
