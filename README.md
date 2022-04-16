@@ -19,13 +19,13 @@
   
   
  4. List of features 
-  - Random generator of one card from each player’s deck (from A ~ 10)
+  - Random generator of one card from each player’s deck (from 1 ~ 10)
        (1) generation of random numbers from 1 to 10 to select a card
   - Storing cards used into an array 
        (2) use an array to keep track of the cards randomly generated in previous rounds
-  - Time limit: the user has to bet within 15 seconds for each round
+  - Time limit: the user has to bet within 10 seconds for each round
   - Store the user and computer's arrays of random generated cards of each round in the heap
-  -ask the user to choose level(which depends on the number of cards in a deck)-----> decide the array size during runtime (dynamic programming using *)
+  - ask the user to choose level to decide the number of cards in a deck)-----> decide the array size during runtime (dynamic programming using *)
        (3) dynamic memory management
   - Saving the user's play record (to accumulate the number of win / lose rounds)
        (4) file intput to call previous txt file
