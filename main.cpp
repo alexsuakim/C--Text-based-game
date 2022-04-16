@@ -109,6 +109,16 @@ void roundGame(int round, bool & userWin, int userDeck[], int compDeck[], int & 
                 break;
             } else { //user wins
                 userWin = true;
+                if (userDeck[round] == 10) { //penalty when computer gives up and computer's card is 10
+                    cout << "there is a penalty as comp card was 10" <<endl;
+                    if (comprChip < 10 ) {
+                        betTotal += compChip;
+                        compChip = 0;
+                    } else {
+                        betTotal += 10;
+                        compChip -= 10;
+                    }
+                }
                 userChip = userChip + betTotal;
                 prevBetTotal = 0;
                 cout << "you win!" << endl;
