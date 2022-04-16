@@ -111,7 +111,7 @@ void roundGame(int round, bool & userWin, int userDeck[], int compDeck[], int & 
                 userWin = true;
                 if (userDeck[round] == 10) { //penalty when computer gives up and computer's card is 10
                     cout << "there is a penalty as comp card was 10" <<endl;
-                    if (comprChip < 10 ) {
+                    if (compChip < 10 ) {
                         betTotal += compChip;
                         compChip = 0;
                     } else {
@@ -180,13 +180,13 @@ int main(){
     //decide who bets first. The player with the higher random generated card bets first.
     bool userWin;
     cout << "let's decide who bets first. The player with a higher card will get to bet first." << endl;
-    int user = rand() % 10 + 1;
-    int comp = rand() % 10 + 1;
-    //generate random cards until the user's card and the computer's card are different.
-    while (user == comp){
-        int user = rand() % 10 + 1;
-        int comp = rand() % 10 + 1;
-    }
+
+    int orderDeck[10];
+    generateDeck(orderDeck);
+
+    int user = orderDeck[0];
+    int comp = orderDeck[1];
+
     //print the cards and who bets first.
     cout << "Your card is " << user << ". Computer's card is " << comp << "." << endl;
     if (user > comp){
