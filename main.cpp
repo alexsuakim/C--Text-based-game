@@ -116,12 +116,12 @@ void roundGame(int round, char betFirst, int userDeck[], int compDeck[], int & u
             char_input = char_userInput();
             if (char_input == 'g'){
                 //update betTotal, so that the betTotals of both players are equal and the while loop ends.
-                //reveal user's bet.
+                //reveal user's card.
                 //the computer wins user's and computer's  total bet and the round ends.
             }
             else if (char_input == 's'){
                 //update betTotal, so that the betTotals of both players are equal and the while loop ends.
-                //reveal user's bet.
+                //reveal user's card.
                 //compare the cards of both players and decide the winner.
                 //The winner wins user's and computer's  total bet and the round ends.
             }
