@@ -207,7 +207,7 @@ int main(){
             break;
         }
     }
-    cout << endl << "game over" << endl;
+    cout << endl << "<game over>" << endl;
     cout << "the number of your chip is " << userChip << endl;
     cout << "the number of the computer's chip is " << compChip << endl;
 
