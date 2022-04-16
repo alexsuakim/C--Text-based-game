@@ -6,7 +6,6 @@
 
 using namespace std;
 
-//!!!!!!!!!
 //take input within 10 seconds, or else bet 1 chip only.
 int int_userInput (void){
     int user_input;
@@ -44,7 +43,7 @@ void generateDeck(int deck[])
         deck[i] = temp;
     }
 }
-////!!!!!!!!!!!!!!!!!!!
+
 void roundGame(int round, bool & userWin, int userDeck[], int compDeck[], int & userChip, int & compChip){
     cout << endl << "this round is round " << round+1 << endl;
     //print useful information (computer's card, user & computer's remaining number of chips).
@@ -60,7 +59,7 @@ void roundGame(int round, bool & userWin, int userDeck[], int compDeck[], int & 
     int userBetTotal = 1;
     int compBetTotal = 1;
     static int prevBetTotal = 0;
-    cout << "each player starts with betting at least one chip" << endl;
+    cout << "each player starts with betting at least one chip." << endl;
     
     //take input from the first player.
     int int_input;
@@ -73,19 +72,17 @@ void roundGame(int round, bool & userWin, int userDeck[], int compDeck[], int & 
             //if give up, reveal user's bet. Then the computer wins user's and computer's total bet and the round ends.
             //if bet,
             int_input = int_userInput();
-            if (int_input > userChip) {
+            if (int_input > userChip) { //to set the max boundary of the int_input 
                 int_input = userChip;
             }
             userChip -= int_input;
             userBetTotal += int_input;
         }
-        //else if betfirst == computer then it is an odd number.
-        else{
+        
+        else{ //computer turn 
             //ask if computer wants to give up or bet.
-            //ig give up, reveal user's bet. Then the user wins user's and computer's total bet and the round ends.
-            //if bet,
             int_input = int_compInput();
-            if (int_input > compChip) {
+            if (int_input > compChip) { //to set the max boudary of the int_input
                 int_input = compChip;
             }
             compChip -= int_input;
