@@ -53,7 +53,7 @@ void roundGame(int round, bool & userWin, int userDeck[], int compDeck[], int & 
     cout << setw(21) << "computer:  " << compChip << " chip(s) left." << endl << endl;
 
     //the minimum bet for each round is 1 chip.
-    //userChip and compChip are not 0 
+    //both userChip and compChip are not 0 
     userChip--;
     compChip--;
     int userBetTotal = 1;
@@ -66,11 +66,8 @@ void roundGame(int round, bool & userWin, int userDeck[], int compDeck[], int & 
     char char_input;
     bool userFirst = userWin;
     while (1) {
-        //if betfirst == user then it is an even number.
-        if (userFirst == true){
-            //ask if the user wants to give up or bet.
-            //if give up, reveal user's bet. Then the computer wins user's and computer's total bet and the round ends.
-            //if bet,
+        if (userFirst == true){ //user turn
+            //get the user bet
             int_input = int_userInput();
             if (int_input > userChip) { //to set the max boundary of the int_input 
                 int_input = userChip;
@@ -80,7 +77,7 @@ void roundGame(int round, bool & userWin, int userDeck[], int compDeck[], int & 
         }
         
         else{ //computer turn 
-            //ask if computer wants to give up or bet.
+            //get the computer bet
             int_input = int_compInput();
             if (int_input > compChip) { //to set the max boudary of the int_input
                 int_input = compChip;
@@ -92,8 +89,18 @@ void roundGame(int round, bool & userWin, int userDeck[], int compDeck[], int & 
         cout << "computer's total bet: " << compBetTotal << endl << endl;
         int betTotal = userBetTotal + compBetTotal + prevBetTotal;
         if (int_input == 0) {
-            if (userFirst == true) { //computer wins 
-                userWin = false; //to reset to false
+            if (userFirst == true) { //computer wins and user gives up
+                userWin = false; //to reset - change the turn to computer
+                if (userDeck[round] == 10) { //penalty when user gives up and user's card is 10
+                    cout << "there is a penalty as your card was 10" <<endl;
+                    if (userChip < 10 ) {
+                        betTotal += userChip;
+                        userChip = 0;
+                    } else {
+                        betTotal += 10;
+                        userChip -= 10;
+                    }
+                }
                 compChip = compChip + betTotal;
                 prevBetTotal = 0;
                 cout << "computer win!" << endl;
