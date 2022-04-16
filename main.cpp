@@ -16,6 +16,7 @@ int int_userInput (void){
 
 
 //이 함수도 컴퓨터 알고리즘 아직 없어서 일단 결과 보려고 인풋받는걸로 해놨는데 나중에 수정해야됨. 칩 갯수 int로 받는 함수.
+//computer algorithm to be implemented
 int int_compInput (void){
     int comp_input;
     cout << "How many chips would computer like to bet? ";
@@ -104,7 +105,7 @@ void roundGame(int round, bool & userWin, int userDeck[], int compDeck[], int & 
                 compChip = compChip + betTotal;
                 prevBetTotal = 0;
                 cout << "computer win!" << endl;
-                cout << "computer is taking " << betTotal << endl;
+                cout << "computer is taking " << betTotal << "chip(s)." << endl;
                 cout << "your card was " << userDeck[round] << endl;
                 break;
             } else { //user wins
@@ -122,7 +123,7 @@ void roundGame(int round, bool & userWin, int userDeck[], int compDeck[], int & 
                 userChip = userChip + betTotal;
                 prevBetTotal = 0;
                 cout << "you win!" << endl;
-                cout << "you are taking " << betTotal << endl;
+                cout << "you are taking " << betTotal <<"chip(s)."<< endl;
                 cout << "your card was " << userDeck[round] << endl;
                 break;
             }
@@ -133,7 +134,7 @@ void roundGame(int round, bool & userWin, int userDeck[], int compDeck[], int & 
                 userChip = userChip + betTotal;
                 prevBetTotal = 0;
                 cout << "you win!" << endl;
-                cout << "you are taking " << betTotal << endl;
+                cout << "you are taking " << betTotal << "chip(s)."<< endl;
                 cout << "your card was " << userDeck[round] << endl;
                 break;
             } else if (userDeck[round] < compDeck[round]) { //computer wins
@@ -141,7 +142,7 @@ void roundGame(int round, bool & userWin, int userDeck[], int compDeck[], int & 
                 compChip = compChip + betTotal;
                 prevBetTotal = 0;
                 cout << "computer win!" << endl;
-                cout << "computer is taking " << betTotal << endl;
+                cout << "computer is taking " << betTotal << "chip(s)." << endl;
                 cout << "your card was " << userDeck[round] << endl;
                 break;
             } else { //when cards are the same
