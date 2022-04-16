@@ -25,6 +25,7 @@
        (2) use an array to keep track of the cards randomly generated in previous rounds
   - Time limit: the user has to bet within 15 seconds for each round
   - Store the user and computer's arrays of random generated cards of each round in the heap
+  -ask the user to choose level(which depends on the number of cards in a deck)-----> decide the array size during runtime (dynamic programming using *)
        (3) dynamic memory management
   - Saving the user's play record (to accumulate the number of win / lose rounds)
        (4) file intput to call previous txt file
