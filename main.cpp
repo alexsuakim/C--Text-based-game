@@ -3,12 +3,13 @@
 #include <random>
 #include <ctime>
 #include <iomanip>
+#include <thread>
 
 using namespace std;
 
 //take input within 10 seconds, or else give up.
 //input (g/s/h). g = give up. s = bet the same amount. h = bet higher.
-//보영아 이 함수 수정해주세여! 얘는 g/s/h char로 받는함수
+//!!!!!!!!!
 char char_userInput (void){
     char user_input;
     cout << "It is your turn to bet. (g = give up, s = bet same amount, h = bet higher) : ";
@@ -16,7 +17,7 @@ char char_userInput (void){
     return user_input;
 }
 
-//  보영아 이것도 수정해주세요! 얘는 칩 몇개인지 int로 받는 함수
+//!!!!!!!!!
 //take input within 10 seconds, or else bet 1 chip only.
 int int_userInput (void){
     int user_input;
@@ -63,8 +64,8 @@ void generateDeck(int deck[])
         deck[i] = temp;
     }
 }
-
-void roundGame(int round, char betFirst, int userDeck[], int compDeck[], int & userChip, int & compChip){
+////!!!!!!!!!!!!!!!!!!!
+void roundGame(int round, int betFirst, int userDeck[], int compDeck[], int & userChip, int & compChip){
 
     //print useful information (computer's card, user & computer's remaining number of chips).
     cout << "let's reveal the cards. You can only see the card of the computer." << endl;
@@ -77,6 +78,7 @@ void roundGame(int round, char betFirst, int userDeck[], int compDeck[], int & u
     compChip--;
     int userBetTotal = 1;
     int compBetTotal = 1;
+    cout << "each player starts with betting one chip" << endl;
     
     //take input from the first player.
     int int_input;
@@ -88,10 +90,10 @@ void roundGame(int round, char betFirst, int userDeck[], int compDeck[], int & u
         //if give up, reveal user's bet. Then the computer wins user's and computer's total bet and the round ends.
         //if bet,
         int_input = int_userInput();
-        userChip -= input;
-        userBetTotal += input;
+        userChip -= int_input;
+        userBetTotal += int_input;
         betFirst++;
-        cout << "the user has bet " << input << " chip(s)." << endl;
+        cout << "the user has bet " << int_input << " chip(s)." << endl;
         cout << "your total bet: " << userBetTotal << endl;
         cout << "computer's total bet: " << compBetTotal << endl << endl;
     }
@@ -102,26 +104,28 @@ void roundGame(int round, char betFirst, int userDeck[], int compDeck[], int & u
         //ig give up, reveal user's bet. Then the user wins user's and computer's total bet and the round ends.
         //if bet,
         int_input = int_compInput();
-        compChip -= input;
-        compBetTotal += input;
-        betfirst++;
-        cout << "the computer has bet " << input << " chip(s)." << endl;
+        compChip -= int_input;
+        compBetTotal += int_input;
+        betFirst++;
+        cout << "the computer has bet " << int_input << " chip(s)." << endl;
         cout << "your total bet: " << userBetTotal << endl;
         cout << "computer's total bet: " << compBetTotal << endl << endl;
     }
     
+    //!!!!!!!!!!!!!!!
     //keep getting input until both players' total bets are equal.
+   
     while (userBetTotal != compBetTotal){
-        if (betFirst % 2 == 0){
+        if (betFirst % 2 == 0){ //user's turn
             char_input = char_userInput();
             if (char_input == 'g'){
                 //update betTotal, so that the betTotals of both players are equal and the while loop ends.
-                //reveal user's card.
+                //reveal user's bet.
                 //the computer wins user's and computer's  total bet and the round ends.
             }
             else if (char_input == 's'){
                 //update betTotal, so that the betTotals of both players are equal and the while loop ends.
-                //reveal user's card.
+                //reveal user's bet.
                 //compare the cards of both players and decide the winner.
                 //The winner wins user's and computer's  total bet and the round ends.
             }
