@@ -45,7 +45,7 @@ void generateDeck(int deck[])
 }
 
 void roundGame(int round, bool & userWin, int userDeck[], int compDeck[], int & userChip, int & compChip){
-    cout << endl << "this round is round " << round+1 << endl;
+    cout << endl << "<this round is round " << round+1 << ">"<< endl;
     //print useful information (computer's card, user & computer's remaining number of chips).
     cout << "let's reveal the cards. You can only see the card of the computer." << endl;
     cout << setw(21) << "computer's card is:  " << compDeck[round] << endl;
@@ -92,8 +92,8 @@ void roundGame(int round, bool & userWin, int userDeck[], int compDeck[], int & 
         cout << "computer's total bet: " << compBetTotal << endl << endl;
         int betTotal = userBetTotal + compBetTotal + prevBetTotal;
         if (int_input == 0) {
-            if (userFirst == true) { //computer wins
-                userWin = false;
+            if (userFirst == true) { //computer wins 
+                userWin = false; //to reset to false
                 compChip = compChip + betTotal;
                 prevBetTotal = 0;
                 cout << "computer win!" << endl;
@@ -181,6 +181,7 @@ int main(){
         cout << "The computer bets first." << endl<<endl;
     }
 
+    cout << "The card sets are shuffled. Round starts." << endl;
     //round continues until all 20 cards are used, or until a player looses all chips.
     for (int round = 0; round < 10; round++){
         if (userChip != 0 && compChip != 0){
