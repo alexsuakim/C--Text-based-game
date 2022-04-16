@@ -25,13 +25,13 @@
        (2) use an array to keep track of the cards randomly generated in previous rounds
   - Time limit: the user has to bet within 10 seconds for each round
   - Store the user and computer's arrays of random generated cards of each round in the heap
-  - ask the user to choose level to decide the number of cards in a deck)-----> decide the array size during runtime (dynamic programming using *)
+  - ask the user to choose level to decide the number of cards in a deck)-----> decide the array size during runtime (dynamic programming using *) ----> easy, norml, hard mode. As the level of difficulty increases, the number of cards in a deck increases.
        (3) dynamic memory management
   - Saving the user's play record (to accumulate the number of win / lose rounds)
        (4) file intput to call previous txt file
        (4) file output to update the txt file after the user's rounds
-  - Computer betting algorithm about how to deal with the user’s choice
-       (4) implement the algorithm file into the main file
+  - Computer betting algorithm about how to deal with the user’s cards and betting choices
+       (4) implement the computer algorithm file into the main file
   - The <main function file> calls the <computer betting algorithm function file> 
        (5) program codes in multiple files
   - Header file, Makefile for automating compiling process
