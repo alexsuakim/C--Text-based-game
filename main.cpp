@@ -49,6 +49,9 @@ void roundGame(int round, bool & userWin, int userDeck[], int compDeck[], int & 
     cout << endl << "<this round is round " << round+1 << ">"<< endl;
     //print useful information (computer's card, user & computer's remaining number of chips).
     cout << "let's reveal the cards. You can only see the card of the computer." << endl;
+    //tester
+    cout << setw(21) << "user's card is:  " << userDeck[round] << endl;
+    //tester
     cout << setw(21) << "computer's card is:  " << compDeck[round] << endl;
     cout << setw(21) << "user:  " << userChip << " chip(s) left." << endl;
     cout << setw(21) << "computer:  " << compChip << " chip(s) left." << endl << endl;
