@@ -3,7 +3,7 @@
 #include <random>
 #include <ctime>
 #include <iomanip>
-#include <algorithm.h>
+#include "algorithm.h"
 
 using namespace std;
 
@@ -15,13 +15,11 @@ int int_userInput (void){
     return user_input;
 }
 
-
-//이 함수도 컴퓨터 알고리즘 아직 없어서 일단 결과 보려고 인풋받는걸로 해놨는데 나중에 수정해야됨. 칩 갯수 int로 받는 함수.
 //computer algorithm to be implemented
-int int_compInput (void){
+int int_compInput (int userCard, int userBetTotal, int compBetTotal){
     int comp_input;
-    cout << "How many chips would computer like to bet? ";
-    cin >> comp_input;
+    cout << "Computer has bet";
+    comp_input = algorithm (userCard, userBetTotal, compBetTotal);
     return comp_input;
 }
 
@@ -83,14 +81,14 @@ void roundGame(int round, bool & userWin, int userDeck[], int compDeck[], int & 
         
         else{ //computer turn 
             //get the computer bet
-            int_input = int_compInput();
+            int_input = int_compInput(userDeck[round], userBetTotal, compBetTotal);
             if (int_input > compChip) { //to set the max boudary of the int_input
                 int_input = compChip;
             }
             compChip -= int_input;
             compBetTotal += int_input;
         }
-        cout << "your total bet: " << userBetTotal << endl;
+        cout << endl << "your total bet: " << userBetTotal << endl;
         cout << "computer's total bet: " << compBetTotal << endl << endl;
         int betTotal = userBetTotal + compBetTotal + prevBetTotal;
         if (int_input == 0) {

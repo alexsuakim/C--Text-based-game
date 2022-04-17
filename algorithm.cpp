@@ -34,6 +34,8 @@ int algorithm (int userCard, int userBetTotal, int compBetTotal) {
                 turnNumber = 0; //reset
                 break;
         } 
+    } else {
+        compBet = 0; //tester
     }
     return compBet;
 }
