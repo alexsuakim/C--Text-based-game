@@ -3,6 +3,7 @@
 #include <random>
 #include <ctime>
 #include <iomanip>
+#include <algorithm.h>
 
 using namespace std;
 
