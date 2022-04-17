@@ -93,7 +93,7 @@ void roundGame(int round, bool & userWin, int userDeck[], int compDeck[], int & 
             if (userFirst == true) { //computer wins and user gives up
                 userWin = false; //to reset - change the turn to computer
                 if (userDeck[round] == 10) { //penalty when user gives up and user's card is 10
-                    cout << "there is a penalty as your card was 10" <<endl;
+                    cout << "there is a penalty of 10 chips" <<endl;
                     if (userChip < 10 ) {
                         betTotal += userChip;
                         userChip = 0;
@@ -110,8 +110,8 @@ void roundGame(int round, bool & userWin, int userDeck[], int compDeck[], int & 
                 break;
             } else { //user wins
                 userWin = true;
-                if (userDeck[round] == 10) { //penalty when computer gives up and computer's card is 10
-                    cout << "there is a penalty as comp card was 10" <<endl;
+                if (compDeck[round] == 10) { //penalty when computer gives up and computer's card is 10
+                    cout << "there is a penalty of 10 chips" <<endl;
                     if (compChip < 10 ) {
                         betTotal += compChip;
                         compChip = 0;
