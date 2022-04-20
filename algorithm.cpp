@@ -9,13 +9,14 @@ using namespace std;
 int algorithm (int userCard, int userBetTotal, int compBetTotal) {
     int compBet;
     static int turnNumber = 0;
-    if (userCard >=1 && userCard <=3) {
+    random_device rd; //random seed
+    mt19937 gen(rd()); 
+
+    if (userCard <=3) { //scenario #1
         switch (turnNumber) {
             case 0: //comp first turn 
                 if (userBetTotal == 1) { //only with user default betting info
                     //random of 3, 4, or 5
-                    random_device rd; //random seed
-                    mt19937 gen(rd()); 
                     uniform_int_distribution<int> dis(3,5); //inclusive 3~5
                     compBet = dis(gen);
                     turnNumber = 1;
@@ -34,8 +35,28 @@ int algorithm (int userCard, int userBetTotal, int compBetTotal) {
                 turnNumber = 0; //reset
                 break;
         } 
-    } else {
-        compBet = 0; //tester
-    }
+    } else if (userCard <= 7){ //scenario #2
+        switch (turnNumber) {
+            case 0: //comp first turn 
+                if (userBetTotal == 1) { //only with user default betting info
+                    //random of 1, 2, or 3
+                    uniform_int_distribution<int> dis(1,3); //inclusive 1~3
+                    compBet = dis(gen);
+                    turnNumber = 1;
+                } else { //with updated user betting info
+                    //bet the same Total as user and end the round
+                    compBet = userBetTotal - compBetTotal;
+                    turnNumber = 0;
+                }
+                break;
+            case 1: //
+                compBet = userBetTotal - compBetTotal;
+                turnNumber = 0;
+                break;
+        } 
+    } else if (userCard <= 9) { //scenario #3
+        compBet = 0;
+        turnNumber = 0; //reset
+    } 
     return compBet;
 }
