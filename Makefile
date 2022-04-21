@@ -1,10 +1,19 @@
 #Makefile
+FLAGS = -pedantic-errors -std=c++11
 
 algorithm.o: algorithm.cpp algorithm.h
-  g++ -c algorithm.cpp
+  g++ $(FLAGS) -c algorithm.cpp
   
 main.o: main.cpp algorithm.h
-  g++ -c main.cpp
+  g++ $(FLAGS) -c main.cpp
 
 indianpoker: algorithm.o main.o
-  g++ algorithm.o main.o -o indianpoker
+  g++ $(FLAGS) algorithm.o main.o -o indianpoker
+
+clean:
+  rm -f indianpoker algorithm.o main.o indianpoker.tgz
+
+tar:
+  tar -czvf indianpoker.tgz *.cpp *.h
+  
+.PHONY: clean tar
