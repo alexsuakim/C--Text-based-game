@@ -15,6 +15,7 @@ int int_userInput (int userChip, int compChip){
     
     //restrict maximum chip input to both userChip and compChip. Can't bet more than a player's all in.
     while (user_input > userChip || user_input > compChip){
+        cout << "The maximum bet cannot exceed a player's all-in amount. Please input again." << endl;
         cout << "How many more chips would you like to bet? ";
         cin >> user_input;
     }
