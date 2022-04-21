@@ -1,3 +1,4 @@
+// algorithm.h
 #ifndef ALGORITHM_H
 #define ALGORITHM_H
 int algorithm (int userCard, int userBetTotal, int compBetTotal);
