@@ -211,8 +211,19 @@ int main(){
         }
     }
     cout << endl << "<game over>" << endl;
-    cout << "the number of your chip is " << userChip << endl;
-    cout << "the number of the computer's chip is " << compChip << endl;
+    
+    //announce the winner of the game.
+    if (userChip > compChip){
+        cout << "Congratulations, you won the game!" << endl;
+    }
+    else{
+        cout << "The computer wins the game. Better luck next time!" << endl;
+    }
+    
+    cout << "you have " << userChip << "chip(s) remaining." << endl;
+    cout << "the computer has " << compChip << "chip(s) remaining." << endl;
+    
+    
 
     return 0;
 }
