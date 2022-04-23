@@ -8,10 +8,17 @@
 using namespace std;
 
 //take input within 10 seconds, or else bet 1 chip only.
-int int_userInput (void){
+int int_userInput (int userChip, int compChip){
     int user_input;
     cout << "How many more chips would you like to bet? ";
     cin >> user_input;
+    
+    //restrict maximum chip input to both userChip and compChip. Can't bet more than a player's all in.
+    while (user_input > userChip || user_input > compChip){
+        cout << "The maximum bet cannot exceed a player's all-in amount. Please input again." << endl;
+        cout << "How many more chips would you like to bet? ";
+        cin >> user_input;
+    }
     return user_input;
 }
 
@@ -69,9 +76,9 @@ void roundGame(int round, bool & userWin, int userDeck[], int compDeck[], int & 
     char char_input;
     bool userFirst = userWin;
     while (1) {
-        if (userFirst == true){ //user turn
+        if (userFirst == true){ //user's turn
             //get the user bet
-            int_input = int_userInput();
+            int_input = int_userInput(userChip, compChip);
             if (int_input > userChip) { //to set the max boundary of the int_input 
                 int_input = userChip;
             }
@@ -79,7 +86,7 @@ void roundGame(int round, bool & userWin, int userDeck[], int compDeck[], int & 
             userBetTotal += int_input;
         }
         
-        else{ //computer turn 
+        else{ //computer's turn 
             //get the computer bet
             int_input = int_compInput(userDeck[round], userBetTotal, compBetTotal);
             if (int_input > compChip) { //to set the max boudary of the int_input
@@ -210,9 +217,19 @@ int main(){
             break;
         }
     }
+    
     cout << endl << "<game over>" << endl;
-    cout << "the number of your chip is " << userChip << endl;
-    cout << "the number of the computer's chip is " << compChip << endl;
-
+    
+    cout << "you have " << userChip << "chip(s) remaining." << endl;
+    cout << "the computer has " << compChip << "chip(s) remaining." << endl;
+    
+    //announce the winner of the game.
+    if (userChip > compChip){
+        cout << "Congratulations, you won the game!" << endl;
+    }
+    else{
+        cout << "The computer wins the game. Better luck next time!" << endl;
+    }
+    
     return 0;
 }
