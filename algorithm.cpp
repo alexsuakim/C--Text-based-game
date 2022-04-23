@@ -57,6 +57,30 @@ int algorithm (int userCard, int userBetTotal, int compBetTotal) {
     } else if (userCard <= 9) { //scenario #3
         compBet = 0;
         turnNumber = 0; //reset
-    } 
+    } else if (userCard == 10) {
+        switch (turnNumber) {
+            case 0: //comp first turn 
+                if (userBetTotal == 1) { //only with user default betting info
+                    //random of 0, 3, 4, or 5
+                    uniform_int_distribution<int> dis(0,5); //0 and inclusive 3~5
+                    compBet = dis(gen);
+                    if (compBet <= 2) { 
+                        compBet = 0;
+                        turnNumber = 0; //end the round
+                    } else {
+                        turnNumber = 1;
+                    }
+                    
+                } else { //with updated user betting info
+                    compBet = 0;
+                    turnNumber = 0;
+                }
+                break;
+            case 1: 
+                compBet = 0;
+                turnNumber = 0;
+                break;
+        } 
+    }
     return compBet;
 }
