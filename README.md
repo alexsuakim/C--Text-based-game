@@ -23,7 +23,6 @@
        (1) generation of numbers from 1 to 10 and randomly shuffle their order in an array 
   - Storing cards used into an array 
        (2) use an array to keep track of the cards randomly generated in previous rounds
-  - Time limit: the user has to bet within 10 seconds for each round
   - Store the user and computer's arrays of random generated cards of each round in the heap
   - ask the user to choose level to decide the number of cards in a deck)-----> decide the array size during runtime (dynamic programming using *) ----> easy, norml, hard mode. As the level of difficulty increases, the number of cards in a deck increases.
        (3) dynamic memory management

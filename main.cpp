@@ -8,7 +8,7 @@
 using namespace std;
 
 //take input within 10 seconds, or else bet 1 chip only.
-int int_userInput (int userChip, int compChip){
+int userInput (int userChip, int compChip){
     int user_input;
     cout << "How many more chips would you like to bet? ";
     cin >> user_input;
@@ -23,7 +23,7 @@ int int_userInput (int userChip, int compChip){
 }
 
 //computer algorithm to be implemented
-int int_compInput (int userCard, int userBetTotal, int compBetTotal){
+int compInput (int userCard, int userBetTotal, int compBetTotal){
     int comp_input;
     cout << "Computer has bet";
     comp_input = algorithm (userCard, userBetTotal, compBetTotal);
@@ -78,7 +78,7 @@ void roundGame(int round, bool & userWin, int userDeck[], int compDeck[], int & 
     while (1) {
         if (userFirst == true){ //user's turn
             //get the user bet
-            int_input = int_userInput(userChip, compChip);
+            int_input = userInput(userChip, compChip);
             if (int_input > userChip) { //to set the max boundary of the int_input 
                 int_input = userChip;
             }
@@ -88,7 +88,7 @@ void roundGame(int round, bool & userWin, int userDeck[], int compDeck[], int & 
         
         else{ //computer's turn 
             //get the computer bet
-            int_input = int_compInput(userDeck[round], userBetTotal, compBetTotal);
+            int_input = compInput(userDeck[round], userBetTotal, compBetTotal);
             if (int_input > compChip) { //to set the max boudary of the int_input
                 int_input = compChip;
             }
