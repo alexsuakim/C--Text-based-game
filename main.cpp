@@ -31,11 +31,11 @@ int compInput (int userCard, int userBetTotal, int compBetTotal){
 }
 
 //generate cards in Deck
-void generateDeck(int deck[])
+void generateDeck(vector<int> deck)
 {
     //fill in the 10 cards in the deck in order.
     for (int i = 0; i < 10; i++){
-        deck[i] = i + 1;
+        deck.push_back(i + 1);
     }
 
     //shuffle the cards in deck.
@@ -51,7 +51,7 @@ void generateDeck(int deck[])
     }
 }
 
-void roundGame(int round, bool & userWin, int userDeck[], int compDeck[], int & userChip, int & compChip){
+void roundGame(int round, bool & userWin, vector<int> userDeck, vector<int> compDeck, int & userChip, int & compChip){
     cout << endl << "<this round is round " << round+1 << ">"<< endl;
     //print useful information (computer's card, user & computer's remaining number of chips).
     cout << "let's reveal the cards. You can only see the card of the computer." << endl;
@@ -180,8 +180,10 @@ int main(){
     int compChip = 20;
 
     //create 2 decks: userDeck and compDeck.
-    int userDeck[10];
-    int compDeck[10];
+    //int userDeck[10];
+    //int compDeck[10];
+    vector<int> userDeck;
+    vector<int> compDeck;
 
     //generate the 10 cards in each deck.
     generateDeck(userDeck);
@@ -191,7 +193,8 @@ int main(){
     bool userWin;
     cout << "let's decide who bets first. The player with a higher card will get to bet first." << endl;
 
-    int orderDeck[10];
+    //int orderDeck[10];
+    vector<int> orderDeck;
     generateDeck(orderDeck);
 
     int user = orderDeck[0];
