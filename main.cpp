@@ -31,7 +31,7 @@ int compInput (int userCard, int userBetTotal, int compBetTotal){
 }
 
 //generate cards in Deck
-void generateDeck(vector<int> deck)
+void generateDeck(vector<int> & deck)
 {
     //fill in the 10 cards in the deck in order.
     for (int i = 0; i < 10; i++){
