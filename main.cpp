@@ -185,10 +185,12 @@ void roundGame(int round, bool & userWin, int userDeck[], int compDeck[], int & 
     
         userFirst = !userFirst; //toggle turn 
     }
+    //update roundLog
     log.userCard = userDeck[round];
     log.compCard = compDeck[round];
     log.userChip = userChip;
     log.compChip = compChip;
+    roundLogs.push_back(log);
 }
 
 int main(){
@@ -251,8 +253,19 @@ int main(){
         cout << "Congratulations, you won the game!" << endl;
     }
     else{
-        cout << "The computer wins the game. Better luck next time!" << endl;
+        cout << "The computer wins the game. Better luck next time!" << endl << endl;
     }
     
+    //print the log
+    cout << "play history is...." << endl;
+    for (int i = 0; i < roundLogs.size(); i++) {
+        cout << "round: " << i+1 << endl;
+        cout << "winner: " << roundLogs[i].roundWinner << endl;
+        cout << "user card: " << roundLogs[i].userCard << endl;
+        cout << "computer card: " << roundLogs[i].compCard << endl;
+        cout << "the number of user chips: " << roundLogs[i].userChip << endl;
+        cout << "the number of computer chips: " << roundLogs[i].compChip << endl << endl;
+
+    }
     return 0;
 }
