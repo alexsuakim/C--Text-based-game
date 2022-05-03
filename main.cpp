@@ -87,6 +87,8 @@ void roundGame(int round, bool & userWin, int userDeck[], int compDeck[], int & 
     int int_input;
     char char_input;
     bool userFirst = userWin;
+    roundLog log;
+
     while (1) {
         if (userFirst == true){ //user's turn
             //get the user bet
@@ -128,6 +130,7 @@ void roundGame(int round, bool & userWin, int userDeck[], int compDeck[], int & 
                 cout << "computer win!" << endl;
                 cout << "computer is taking " << betTotal << "chip(s)." << endl;
                 cout << "your card was " << userDeck[round] << endl;
+                log.roundWinner = "computer";
                 break;
             } else { //user wins
                 userWin = true;
@@ -146,6 +149,7 @@ void roundGame(int round, bool & userWin, int userDeck[], int compDeck[], int & 
                 cout << "you win!" << endl;
                 cout << "you are taking " << betTotal <<"chip(s)."<< endl;
                 cout << "your card was " << userDeck[round] << endl;
+                log.roundWinner = "user";
                 break;
             }
         }
@@ -157,6 +161,7 @@ void roundGame(int round, bool & userWin, int userDeck[], int compDeck[], int & 
                 cout << "you win!" << endl;
                 cout << "you are taking " << betTotal << "chip(s)."<< endl;
                 cout << "your card was " << userDeck[round] << endl;
+                log.roundWinner = "user";
                 break;
             } else if (userDeck[round] < compDeck[round]) { //computer wins
                 userWin = false;
@@ -165,6 +170,7 @@ void roundGame(int round, bool & userWin, int userDeck[], int compDeck[], int & 
                 cout << "computer win!" << endl;
                 cout << "computer is taking " << betTotal << "chip(s)." << endl;
                 cout << "your card was " << userDeck[round] << endl;
+                log.roundWinner = "computer";
                 break;
             } else { //when cards are the same
             //round ends
@@ -172,12 +178,17 @@ void roundGame(int round, bool & userWin, int userDeck[], int compDeck[], int & 
                 prevBetTotal = userBetTotal + compBetTotal;
                 cout << "your card was " << userDeck[round] << endl;
                 cout << "draw! this round betting " << prevBetTotal << " moves to the next round" << endl;
+                log.roundWinner = "none";
                 break;
             }
         }
     
         userFirst = !userFirst; //toggle turn 
     }
+    log.userCard = userDeck[round];
+    log.compCard = compDeck[round];
+    log.userChip = userChip;
+    log.compChip = compChip;
 }
 
 int main(){
