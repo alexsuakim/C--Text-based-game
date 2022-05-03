@@ -8,6 +8,17 @@
 
 using namespace std;
 
+//to present the record of play 
+struct roundLog {
+    int userCard;
+    int compCard;
+    int userChip;
+    int compChip;
+    string roundWinner;
+};
+
+vector <roundLog> roundLogs;
+
 //take input within 10 seconds, or else bet 1 chip only.
 int userInput (int userChip, int compChip){
     int user_input;
