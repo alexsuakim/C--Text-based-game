@@ -20,7 +20,7 @@ struct roundLog {
 vector <roundLog> roundLogs;
 
 //take input within 10 seconds, or else bet 1 chip only.
-int userInput (int userChip, int compChip){
+int userInput (int userChip, int compChip, int compBetTotal, int userBetTotal){
     int user_input;
     cout << "How many more chips would you like to bet? ";
     cin >> user_input;
@@ -31,6 +31,15 @@ int userInput (int userChip, int compChip){
         cout << "How many more chips would you like to bet? ";
         cin >> user_input;
     }
+
+    // restrict the user total bet to be greater than the computer's total bet
+    while ((user_input != 0) && ((user_input + userBetTotal) < compBetTotal)) {
+        cout << "your total bet should be the same or greater than the computer's total bet" << endl;
+        cout << "Please input again." << endl; 
+        cout << "How many more chips would you like to bet? ";
+        cin >> user_input;
+    }
+
     return user_input;
 }
 
@@ -92,7 +101,7 @@ void roundGame(int round, bool & userWin, int userDeck[], int compDeck[], int & 
     while (1) {
         if (userFirst == true){ //user's turn
             //get the user bet
-            int_input = userInput(userChip, compChip);
+            int_input = userInput(userChip, compChip, compBetTotal, userBetTotal);
             if (int_input > userChip) { //to set the max boundary of the int_input 
                 int_input = userChip;
             }
@@ -250,7 +259,7 @@ int main(){
     
     //announce the winner of the game.
     if (userChip > compChip){
-        cout << "Congratulations, you won the game!" << endl;
+        cout << "Congratulations, you won the game!" << endl << endl;
     }
     else{
         cout << "The computer wins the game. Better luck next time!" << endl << endl;
