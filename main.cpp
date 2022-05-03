@@ -19,7 +19,7 @@ struct roundLog {
 
 vector <roundLog> roundLogs;
 
-//take input within 10 seconds, or else bet 1 chip only.
+//takes the number of chips to bet from user 
 int userInput (int userChip, int compChip, int compBetTotal, int userBetTotal){
     int user_input;
     cout << "How many more chips would you like to bet? ";
@@ -43,7 +43,8 @@ int userInput (int userChip, int compChip, int compBetTotal, int userBetTotal){
     return user_input;
 }
 
-//computer algorithm to be implemented
+//computer algorithm implemented 
+//takes the number of chips to bet from computer
 int compInput (int userCard, int userBetTotal, int compBetTotal){
     int comp_input;
     cout << "Computer has bet";
@@ -51,7 +52,7 @@ int compInput (int userCard, int userBetTotal, int compBetTotal){
     return comp_input;
 }
 
-//generate cards in Deck
+//generate cards in Deck and randomly shuffle their order
 void generateDeck(int deck[])
 {
     //fill in the 10 cards in the deck in order.
@@ -72,6 +73,7 @@ void generateDeck(int deck[])
     }
 }
 
+//actual play flow for each round
 void roundGame(int round, bool & userWin, int userDeck[], int compDeck[], int & userChip, int & compChip){
     cout << endl << "<this round is round " << round+1 << ">"<< endl;
     //print useful information (computer's card, user & computer's remaining number of chips).
