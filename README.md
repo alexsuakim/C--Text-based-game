@@ -23,12 +23,11 @@
        (1) generation of numbers from 1 to 10 and randomly shuffle their order in an array 
   - Storing cards used into an array 
        (2) use an array to keep track of the cards randomly generated in previous rounds
-  - Store the user and computer's arrays of random generated cards of each round in the heap
-  - ask the user to choose level to decide the number of cards in a deck)-----> decide the array size during runtime (dynamic programming using *) ----> easy, norml, hard mode. As the level of difficulty increases, the number of cards in a deck increases.
+  - Store the each round's play record to the vector. The play log includes each round's winner, the number of user and compmuter chip, the user and computer card. The log record grows in size as needed when each round proceeds.
        (3) dynamic memory management
-  - Saving the user's play record (to accumulate the number of win / lose rounds)
-       (4) file intput to call previous txt file
-       (4) file output to update the txt file after the user's rounds
+  - Saving the user's play record (to accumulate the number of win / lose after all 10 rounds)
+       (4) file intput to call previous txt file containing previous playing record
+       (4) file output to update the txt file after all 10 rounds
   - Computer betting algorithm about how to deal with the user’s cards and betting choices
        (4) implement the computer algorithm file into the main file
   - The <main function file> calls the <computer betting algorithm function file> 
