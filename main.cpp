@@ -207,7 +207,13 @@ int main(){
     //print the game's rule for the user.
 
     //generate random seed using current time.
-    srand(time(NULL));
+    //srand(time(NULL));
+    
+    //generate random seed by taking input.
+    int seed;
+    cout << "Choose an integer to use as a seed to generate random card decks." << endl;
+    cin >> seed;
+    srand(seed);
 
     //both players receive 20 chips each.
     int userChip = 20;
