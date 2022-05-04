@@ -9,14 +9,14 @@ using namespace std;
 int algorithm (int userCard, int userBetTotal, int compBetTotal) {
     int compBet;
     static int turnNumber = 0;
-    random_device rd; //random seed
-    mt19937 gen(rd()); 
+
 
     if (userCard <=3) { //scenario #1
         switch (turnNumber) {
             case 0: //comp first turn 
                 if (userBetTotal == 1) { //only with user default betting info
                     //random of 3, 4, or 5
+                    default_random_engine gen;
                     uniform_int_distribution<int> dis(3,5); //inclusive 3~5
                     compBet = dis(gen);
                     turnNumber = 1;
@@ -40,6 +40,7 @@ int algorithm (int userCard, int userBetTotal, int compBetTotal) {
             case 0: //comp first turn 
                 if (userBetTotal == 1) { //only with user default betting info
                     //random of 1, 2, or 3
+                    default_random_engine gen;
                     uniform_int_distribution<int> dis(1,3); //inclusive 1~3
                     compBet = dis(gen);
                     turnNumber = 1;
@@ -62,6 +63,7 @@ int algorithm (int userCard, int userBetTotal, int compBetTotal) {
             case 0: //comp first turn 
                 if (userBetTotal == 1) { //only with user default betting info
                     //random of 0, 3, 4, or 5
+                    default_random_engine gen;
                     uniform_int_distribution<int> dis(0,5); //0 and inclusive 3~5
                     compBet = dis(gen);
                     if (compBet <= 2) { 

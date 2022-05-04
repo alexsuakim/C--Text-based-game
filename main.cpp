@@ -4,6 +4,7 @@
 #include <ctime>
 #include <iomanip>
 #include <vector>
+#include <fstream>
 #include "algorithm.h"
 
 using namespace std;
@@ -104,9 +105,6 @@ void roundGame(int round, bool & userWin, int userDeck[], int compDeck[], int & 
         if (userFirst == true){ //user's turn
             //get the user bet
             int_input = userInput(userChip, compChip, compBetTotal, userBetTotal);
-            if (int_input > userChip) { //to set the max boundary of the int_input 
-                int_input = userChip;
-            }
             userChip -= int_input;
             userBetTotal += int_input;
         }
@@ -259,12 +257,15 @@ int main(){
     cout << "you have " << userChip << "chip(s) remaining." << endl;
     cout << "the computer has " << compChip << "chip(s) remaining." << endl;
     
+    string finalWinner;
     //announce the winner of the game.
     if (userChip > compChip){
         cout << "Congratulations, you won the game!" << endl << endl;
+        finalWinner = "user";
     }
     else{
         cout << "The computer wins the game. Better luck next time!" << endl << endl;
+        finalWinner = "computer";
     }
     
     //print the log
@@ -278,5 +279,23 @@ int main(){
         cout << "the number of computer chips: " << roundLogs[i].compChip << endl << endl;
 
     }
+
+    cout << "do you want to save the result? if yes, press 'Y/y'" << endl;
+    char saveOption;
+    cin >> saveOption;
+    if ((saveOption == 'y') || (saveOption == 'Y')) {
+        ofstream fout;
+        fout.open("gameRecord.txt", ios::app);
+        if (fout.fail()) {
+            exit(1);
+        }
+        fout << "Final Winner: " << finalWinner << endl;
+        fout << "User Chip: " << userChip << endl;
+        fout << "computer Chip: " << compChip << endl;
+        fout.close();
+        cout << "the result is saved" << endl;
+    }
+    
+
     return 0;
 }
