@@ -295,7 +295,18 @@ int main(){
         fout.close();
         cout << "the result is saved" << endl;
     }
-    
 
+    cout << "do you want to call your playing results? if yes, press 'Y/y'" << endl;
+    cin >> saveOption;
+    if ((saveOption == 'y') || (saveOption == 'Y')) {
+        ifstream fin;
+        fin.open("gameRecord.txt");
+        if (fin.fail()) {
+            exit(1);
+        }
+    // fin 구현
+        fin.close();
+    }
+    
     return 0;
 }
