@@ -50,7 +50,7 @@ int compInput (int userCard, int userBetTotal, int compBetTotal, int seed){
     int comp_input;
     cout << "Computer has bet ";
     comp_input = algorithm (userCard, userBetTotal, compBetTotal, seed);
-    cout << comp_input << "chips." << endl;
+    cout << comp_input << " chips." << endl;
     return comp_input;
 }
 
