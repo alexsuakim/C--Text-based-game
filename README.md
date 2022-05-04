@@ -25,9 +25,8 @@
        (2) use an array to keep track of the cards randomly generated in previous rounds
   - Store the each round's play record to the vector. The play log includes each round's winner, the number of user and compmuter chip, the user and computer card. The log record grows in size as needed when each round proceeds.
        (3) dynamic memory management
-  - Saving the user's play record (to accumulate the number of win / lose after all 10 rounds)
-       (4) file intput to call previous txt file containing previous playing record
-       (4) file output to update the txt file after all 10 rounds
+  - Saving and loading the user's play record (to save and load the playing record after all 10 rounds). The playing record includes winner, final user's chips and computer's chips
+       (4) file input/output
   - Computer betting algorithm about how to deal with the user’s cards and betting choices
        (4) implement the computer algorithm file into the main file
   - The <main function file> calls the <computer betting algorithm function file> 

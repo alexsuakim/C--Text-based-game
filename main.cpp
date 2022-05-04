@@ -304,7 +304,7 @@ int main(){
         if (fin.fail()) {
             exit(1);
         }
-    // fin 구현
+        // fin 구현
         fin.close();
     }
     
