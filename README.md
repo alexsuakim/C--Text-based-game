@@ -19,7 +19,7 @@
   
   
  4. List of features 
-  - Random generator of one card from each player’s deck (from 1 ~ 10)
+  - Random generator of ten cards for each player’s deck (from 1 ~ 10)
        (1) generation of numbers from 1 to 10 and randomly shuffle their order in an array 
   - Storing cards used into an array 
        (2) use an array to keep track of the cards randomly generated in previous rounds
@@ -27,7 +27,7 @@
        (3) dynamic memory management
   - Saving and loading the user's play record (to save and load the playing record after all 10 rounds). The playing record includes winner, final user's chips and computer's chips
        (4) file input/output
-  - Computer betting algorithm about how to deal with the user’s cards and betting choices
+  - Computer betting algorithm on how to deal with the user’s cards and betting choices
        (4) implement the computer algorithm file into the main file
   - The <main function file> calls the <computer betting algorithm function file> 
        (5) program codes in multiple files
