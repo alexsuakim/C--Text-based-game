@@ -304,7 +304,11 @@ int main(){
         if (fin.fail()) {
             exit(1);
         }
-        // fin 구현
+        else {
+            if (fin.is_open()){
+                cout << fin.rdbuf();
+            }
+        }
         fin.close();
     }
     
