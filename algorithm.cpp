@@ -6,10 +6,11 @@
 
 using namespace std;
 
-int algorithm (int userCard, int userBetTotal, int compBetTotal) {
+int algorithm (int userCard, int userBetTotal, int compBetTotal, int seed) {
     int compBet;
     static int turnNumber = 0;
-    srand(time(NULL));
+    //srand(time(NULL));
+    srand(seed);
 
     if (userCard <=3) { //scenario #1
         switch (turnNumber) {
