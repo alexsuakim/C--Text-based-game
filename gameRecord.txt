@@ -1,14 +1,4 @@
 Final Winner: user
-User Chip: 25
-computer Chip: 15
-Final Winner: computer
-User Chip: 0
-computer Chip: 40
-Final Winner: user
-User Chip: 40
-computer Chip: 0
--------------------------------
-Final Winner: user
 User Chip: 29
 computer Chip: 11
 -------------------------------
