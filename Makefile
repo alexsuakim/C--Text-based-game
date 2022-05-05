@@ -1,4 +1,5 @@
 #Makefile
+#..
 FLAGS = -pedantic-errors -std=c++11
 
 algorithm.o: algorithm.cpp algorithm.h
