@@ -1,0 +1,440 @@
+let's decide who bets first. The player with a higher card will get to bet first.
+Your card is 2. Computer's card is 9.
+The computer bets first.
+
+The card sets are shuffled. Round starts.
+-----------------------------------------------------------------------
+<this round is round 1>
+let's reveal the cards. You can only see the card of the computer.
+computer's card is:  9
+              user:  20 chip(s) left.
+          computer:  20 chip(s) left.
+
+each player starts with betting at least one chip.
+Computer has bet 1 chips.
+
+your total bet: 1
+computer's total bet: 2
+
+How many more chips would you like to bet? 12
+
+your total bet: 13
+computer's total bet: 2
+
+Computer has bet 11 chips.
+
+your total bet: 13
+computer's total bet: 13
+
+computer win!
+computer is taking 26chip(s).
+your card was 4
+-----------------------------------------------------------------------
+<this round is round 2>
+let's reveal the cards. You can only see the card of the computer.
+computer's card is:  6
+              user:  7 chip(s) left.
+          computer:  33 chip(s) left.
+
+each player starts with betting at least one chip.
+Computer has bet 5 chips.
+
+your total bet: 1
+computer's total bet: 6
+
+How many more chips would you like to bet? 5
+
+your total bet: 6
+computer's total bet: 6
+
+computer win!
+computer is taking 12chip(s).
+your card was 3
+-----------------------------------------------------------------------
+<this round is round 3>
+let's reveal the cards. You can only see the card of the computer.
+computer's card is:  2
+              user:  1 chip(s) left.
+          computer:  39 chip(s) left.
+
+each player starts with betting at least one chip.
+Computer has bet 0 chips.
+
+your total bet: 1
+computer's total bet: 1
+
+you win!
+you are taking 2chip(s).
+your card was 6
+-----------------------------------------------------------------------
+<this round is round 4>
+let's reveal the cards. You can only see the card of the computer.
+computer's card is:  5
+              user:  2 chip(s) left.
+          computer:  38 chip(s) left.
+
+each player starts with betting at least one chip.
+How many more chips would you like to bet? 1
+
+your total bet: 2
+computer's total bet: 1
+
+you win!
+you are taking 3chip(s).
+your card was 10
+-----------------------------------------------------------------------
+<this round is round 5>
+let's reveal the cards. You can only see the card of the computer.
+computer's card is:  3
+              user:  3 chip(s) left.
+          computer:  37 chip(s) left.
+
+each player starts with betting at least one chip.
+How many more chips would you like to bet? ^C
+choiboyeong@choeboyeongs-MacBook-Air COMP2113_171 % ./indianpoker 
+let's decide who bets first. The player with a higher card will get to bet first.
+Your card is 4. Computer's card is 8.
+The computer bets first.
+
+The card sets are shuffled. Round starts.
+-----------------------------------------------------------------------
+<this round is round 1>
+let's reveal the cards. You can only see the card of the computer.
+computer's card is:  1
+              user:  20 chip(s) left.
+          computer:  20 chip(s) left.
+
+each player starts with betting at least one chip.
+Computer has bet 2 chips.
+
+your total bet: 1
+computer's total bet: 3
+
+How many more chips would you like to bet? 20
+The maximum bet cannot exceed a player's all-in amount. Please input again.
+How many more chips would you like to bet? 1
+your total bet should be the same or greater than the computer's total bet
+Please input again.
+How many more chips would you like to bet? 2
+
+your total bet: 3
+computer's total bet: 3
+
+you win!
+you are taking 6chip(s).
+your card was 5
+-----------------------------------------------------------------------
+<this round is round 2>
+let's reveal the cards. You can only see the card of the computer.
+computer's card is:  6
+              user:  23 chip(s) left.
+          computer:  17 chip(s) left.
+
+each player starts with betting at least one chip.
+How many more chips would you like to bet? ^C
+choiboyeong@choeboyeongs-MacBook-Air COMP2113_171 % make indianpoker
+make: `indianpoker' is up to date.
+choiboyeong@choeboyeongs-MacBook-Air COMP2113_171 % ./indianpoker 
+let's decide who bets first. The player with a higher card will get to bet first.
+Your card is 1. Computer's card is 3.
+The computer bets first.
+
+The card sets are shuffled. Round starts.
+-----------------------------------------------------------------------
+<this round is round 1>
+let's reveal the cards. You can only see the card of the computer.
+computer's card is:  5
+              user:  20 chip(s) left.
+          computer:  20 chip(s) left.
+
+each player starts with betting at least one chip.
+Computer has bet 0 chips.
+
+your total bet: 1
+computer's total bet: 1
+
+you win!
+you are taking 2chip(s).
+your card was 9
+-----------------------------------------------------------------------
+<this round is round 2>
+let's reveal the cards. You can only see the card of the computer.
+computer's card is:  6
+              user:  21 chip(s) left.
+          computer:  19 chip(s) left.
+
+each player starts with betting at least one chip.
+How many more chips would you like to bet? 2
+
+your total bet: 3
+computer's total bet: 1
+
+Computer has bet 2 chips.
+
+your total bet: 3
+computer's total bet: 3
+
+computer win!
+computer is taking 6chip(s).
+your card was 5
+-----------------------------------------------------------------------
+<this round is round 3>
+let's reveal the cards. You can only see the card of the computer.
+computer's card is:  10
+              user:  18 chip(s) left.
+          computer:  22 chip(s) left.
+
+each player starts with betting at least one chip.
+Computer has bet 3 chips.
+
+your total bet: 1
+computer's total bet: 4
+
+How many more chips would you like to bet? 0
+
+your total bet: 1
+computer's total bet: 4
+
+computer win!
+computer is taking 5chip(s).
+your card was 6
+-----------------------------------------------------------------------
+<this round is round 4>
+let's reveal the cards. You can only see the card of the computer.
+computer's card is:  2
+              user:  17 chip(s) left.
+          computer:  23 chip(s) left.
+
+each player starts with betting at least one chip.
+Computer has bet 1 chips.
+
+your total bet: 1
+computer's total bet: 2
+
+How many more chips would you like to bet? 5
+
+your total bet: 6
+computer's total bet: 2
+
+Computer has bet 4 chips.
+
+your total bet: 6
+computer's total bet: 6
+
+computer win!
+computer is taking 12chip(s).
+your card was 1
+-----------------------------------------------------------------------
+<this round is round 5>
+let's reveal the cards. You can only see the card of the computer.
+computer's card is:  3
+              user:  11 chip(s) left.
+          computer:  29 chip(s) left.
+
+each player starts with betting at least one chip.
+Computer has bet 2 chips.
+
+your total bet: 1
+computer's total bet: 3
+
+How many more chips would you like to bet? 4
+
+your total bet: 5
+computer's total bet: 3
+
+Computer has bet 2 chips.
+
+your total bet: 5
+computer's total bet: 5
+
+you win!
+you are taking 10chip(s).
+your card was 7
+-----------------------------------------------------------------------
+<this round is round 6>
+let's reveal the cards. You can only see the card of the computer.
+computer's card is:  8
+              user:  16 chip(s) left.
+          computer:  24 chip(s) left.
+
+each player starts with betting at least one chip.
+How many more chips would you like to bet? 0
+
+your total bet: 1
+computer's total bet: 1
+
+computer win!
+computer is taking 2chip(s).
+your card was 2
+-----------------------------------------------------------------------
+<this round is round 7>
+let's reveal the cards. You can only see the card of the computer.
+computer's card is:  7
+              user:  15 chip(s) left.
+          computer:  25 chip(s) left.
+
+each player starts with betting at least one chip.
+Computer has bet 0 chips.
+
+your total bet: 1
+computer's total bet: 1
+
+you win!
+you are taking 2chip(s).
+your card was 8
+-----------------------------------------------------------------------
+<this round is round 8>
+let's reveal the cards. You can only see the card of the computer.
+computer's card is:  4
+              user:  16 chip(s) left.
+          computer:  24 chip(s) left.
+
+each player starts with betting at least one chip.
+How many more chips would you like to bet? 5
+
+your total bet: 6
+computer's total bet: 1
+
+Computer has bet 0 chips.
+
+your total bet: 6
+computer's total bet: 1
+
+you win!
+you are taking 7chip(s).
+your card was 10
+-----------------------------------------------------------------------
+<this round is round 9>
+let's reveal the cards. You can only see the card of the computer.
+computer's card is:  1
+              user:  17 chip(s) left.
+          computer:  23 chip(s) left.
+
+each player starts with betting at least one chip.
+How many more chips would you like to bet? 7 
+
+your total bet: 8
+computer's total bet: 1
+
+Computer has bet 8 chips.
+
+your total bet: 8
+computer's total bet: 9
+
+How many more chips would you like to bet? 5
+
+your total bet: 13
+computer's total bet: 9
+
+Computer has bet 4 chips.
+
+your total bet: 13
+computer's total bet: 13
+
+you win!
+you are taking 26chip(s).
+your card was 3
+-----------------------------------------------------------------------
+<this round is round 10>
+let's reveal the cards. You can only see the card of the computer.
+computer's card is:  9
+              user:  30 chip(s) left.
+          computer:  10 chip(s) left.
+
+each player starts with betting at least one chip.
+How many more chips would you like to bet? 0
+
+your total bet: 1
+computer's total bet: 1
+
+computer win!
+computer is taking 2chip(s).
+your card was 4
+
+<game over>
+you have 29chip(s) remaining.
+the computer has 11chip(s) remaining.
+Congratulations, you won the game!
+
+play history is....
+round: 1
+winner: user
+user card: 9
+computer card: 5
+the number of user chips: 21
+the number of computer chips: 19
+
+round: 2
+winner: computer
+user card: 5
+computer card: 6
+the number of user chips: 18
+the number of computer chips: 22
+
+round: 3
+winner: computer
+user card: 6
+computer card: 10
+the number of user chips: 17
+the number of computer chips: 23
+
+round: 4
+winner: computer
+user card: 1
+computer card: 2
+the number of user chips: 11
+the number of computer chips: 29
+
+round: 5
+winner: user
+user card: 7
+computer card: 3
+the number of user chips: 16
+the number of computer chips: 24
+
+round: 6
+winner: computer
+user card: 2
+computer card: 8
+the number of user chips: 15
+the number of computer chips: 25
+
+round: 7
+winner: user
+user card: 8
+computer card: 7
+the number of user chips: 16
+the number of computer chips: 24
+
+round: 8
+winner: user
+user card: 10
+computer card: 4
+the number of user chips: 17
+the number of computer chips: 23
+
+round: 9
+winner: user
+user card: 3
+computer card: 1
+the number of user chips: 30
+the number of computer chips: 10
+
+round: 10
+winner: computer
+user card: 4
+computer card: 9
+the number of user chips: 29
+the number of computer chips: 11
+
+do you want to save the result? if yes, press 'Y/y'
+Y
+the result is saved
+
+do you want to call your playing results? if yes, press 'Y/y'
+Y
+Final Winner: user
+User Chip: 29
+computer Chip: 11
+-------------------------------
+
