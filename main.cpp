@@ -26,27 +26,34 @@ int userInput (int userChip, int compChip, int compBetTotal, int userBetTotal){
     cout << "How many more chips would you like to bet? ";
     cin >> user_input;
     
+    bool firstNotMet = true; //first userinput restriction 
+    bool secondNotMet = true; //second userinput restriction 
 
-    //restrict maximum chip input to both userChip and compChip. Can't bet more than a player's all in.
-    while (user_input > userChip || user_input > compChip){
-        if (compChip == 1) {
-            break;
+    while (firstNotMet || secondNotMet) {
+        //restrict maximum chip input to both userChip and compChip. Can't bet more than a player's all in.
+        if (user_input > userChip || user_input > compChip){
+            if (compChip == 1) {
+                firstNotMet = false;
+            } else {
+                cout << "The maximum bet cannot exceed a player's all-in amount. Please input again." << endl;
+                cout << "How many more chips would you like to bet? ";
+                cin >> user_input;
+            }
         } else {
-            cout << "The maximum bet cannot exceed a player's all-in amount. Please input again." << endl;
+            firstNotMet = false;
+        }
+        // restrict the user total bet to be greater than the computer's total bet
+        if ((user_input != 0) && ((user_input + userBetTotal) < compBetTotal)) {
+            cout << "your total bet should be the same or greater than the computer's total bet" << endl;
+            cout << "Please input again." << endl; 
             cout << "How many more chips would you like to bet? ";
             cin >> user_input;
+        } else {
+            secondNotMet = false;
         }
-    }
-
-    // restrict the user total bet to be greater than the computer's total bet
-    while ((user_input != 0) && ((user_input + userBetTotal) < compBetTotal)) {
-        cout << "your total bet should be the same or greater than the computer's total bet" << endl;
-        cout << "Please input again." << endl; 
-        cout << "How many more chips would you like to bet? ";
-        cin >> user_input;
-    }
-
-    return user_input;
+            
+    }  
+    return user_input; 
 }
 
 //computer algorithm implemented 
