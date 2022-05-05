@@ -60,10 +60,10 @@ int userInput (int userChip, int compChip, int compBetTotal, int userBetTotal){
 
 //computer algorithm implemented 
 //takes the number of chips to bet from computer
-int compInput (int userCard, int userBetTotal, int compBetTotal, int seed){
+int compInput (int userCard, int userBetTotal, int compBetTotal){
     int comp_input;
     cout << "Computer has bet ";
-    comp_input = algorithm (userCard, userBetTotal, compBetTotal, seed);
+    comp_input = algorithm (userCard, userBetTotal, compBetTotal);
     cout << comp_input << " chips." << endl;
     return comp_input;
 }
@@ -90,7 +90,7 @@ void generateDeck(int deck[])
 }
 
 //actual play flow for each round
-void roundGame(int round, bool & userWin, int userDeck[], int compDeck[], int & userChip, int & compChip, int seed){
+void roundGame(int round, bool & userWin, int userDeck[], int compDeck[], int & userChip, int & compChip){
     cout << endl << "<this round is round " << round+1 << ">"<< endl;
     //print useful information (computer's card, user & computer's remaining number of chips).
     cout << "let's reveal the cards. You can only see the card of the computer." << endl;
@@ -126,7 +126,7 @@ void roundGame(int round, bool & userWin, int userDeck[], int compDeck[], int & 
         
         else{ //computer's turn 
             //get the computer bet
-            int_input = compInput(userDeck[round], userBetTotal, compBetTotal, seed);
+            int_input = compInput(userDeck[round], userBetTotal, compBetTotal);
             if (int_input > compChip) { //to set the max boudary of the int_input
                 int_input = compChip;
             }
@@ -222,13 +222,7 @@ int main(){
     //print the game's rule for the user.
 
     //generate random seed using current time.
-    //srand(time(NULL));
-    
-    //generate random seed by taking input.
-    int seed;
-    cout << "Choose an integer to use as a seed to generate random card decks." << endl;
-    cin >> seed;
-    srand(seed);
+    srand(time(NULL));
 
     //both players receive 20 chips each.
     int userChip = 20;
@@ -267,7 +261,7 @@ int main(){
     //round continues until all 20 cards are used, or until a player looses all chips.
     for (int round = 0; round < 10; round++){
         if (userChip != 0 && compChip != 0){
-            roundGame(round, userWin, userDeck, compDeck, userChip, compChip, seed);
+            roundGame(round, userWin, userDeck, compDeck, userChip, compChip);
         } else {
             break;
         }
