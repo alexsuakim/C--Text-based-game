@@ -2,3 +2,7 @@ Final Winner: user
 User Chip: 29
 computer Chip: 11
 -------------------------------
+Final Winner: computer
+User Chip: 2
+computer Chip: 38
+-------------------------------
