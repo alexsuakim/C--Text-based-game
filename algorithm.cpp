@@ -10,7 +10,8 @@ int algorithm (int userCard, int userBetTotal, int compBetTotal) {
     int compBet;
     static int turnNumber = 0;
     srand(time(NULL));
-
+    
+    //scenario #1 ~ #4
     if (userCard <=3) { //scenario #1
         switch (turnNumber) {
             case 0: //comp first turn 
@@ -54,7 +55,7 @@ int algorithm (int userCard, int userBetTotal, int compBetTotal) {
     } else if (userCard <= 9) { //scenario #3
         compBet = 0;
         turnNumber = 0; //reset
-    } else if (userCard == 10) {
+    } else if (userCard == 10) { //scenario #4
         switch (turnNumber) {
             case 0: //comp first turn 
                 if (userBetTotal == 1) { //only with user default betting info
