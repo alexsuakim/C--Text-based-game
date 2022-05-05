@@ -23,12 +23,10 @@
        (1) generation of numbers from 1 to 10 and randomly shuffle their order in an array 
   - Storing cards used into an array 
        (2) use an array to keep track of the cards randomly generated in previous rounds
-  - Store the each round's play record to the vector. The play log includes each round's winner, the number of user and compmuter chip, the user and computer card. The log record grows in size as needed when each round proceeds.
+  - Store the each round's play record to the vector. The play log includes each round's winner,  the user's and computer's card, and the number of user's and computer's chips. The log record grows in size as needed when each round proceeds.
        (3) dynamic memory management
-  - Saving and loading the user's play record (to save and load the playing record after all 10 rounds). The playing record includes winner, final user's chips and computer's chips
+  - Saving and loading the user's play record (to save and load the playing record after all 10 rounds). The playing record includes final winner, final user's chips and final computer's chips
        (4) file input/output
-  - Computer betting algorithm on how to deal with the user’s cards and betting choices
-       (4) implement the computer algorithm file into the main file
   - The main function file calls the computer betting algorithm function file
        (5) program codes in multiple files
   - Header file, Makefile for automating compiling process
@@ -37,6 +35,7 @@
 4. no non-standard C/C++ libraries are used.
   
 5. Compilation and execution instructions. Simply put, this serves like a "Quick start" of your game.
+
   For compilation
   make indianpoker
   

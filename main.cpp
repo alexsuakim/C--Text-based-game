@@ -24,38 +24,38 @@ vector <roundLog> roundLogs;
 int userInput (int userChip, int compChip, int compBetTotal, int userBetTotal){
     int user_input;
     cout << "How many more chips would you like to bet? ";
-    cin >> user_input;
     
+    while(true){
 
+        cin >> user_input;
 
-    bool firstNotMet = true;
-    bool secondNotMet = true;
-    while( firstNotMet || secondNotMet) {
-        //first check point
-        //restrict maximum chip input to both userChip and compChip. Can't bet more than a player's all in.
-        if ((user_input > userChip) || (user_input > compChip)) {
-            if ( (user_input <= userChip) && compChip == 1) {
-                firstNotMet = false;
+        if(user_input != 0){
+            // Continue to bet
+            if((user_input <= userChip) && (user_input <= compChip)){
+
+                if((user_input + userBetTotal) >= compBetTotal){
+
+                    break;
+
+                } else {
+                    // Print warning message 
+                    cout << "your total bet should be the same or greater than the computer's total bet" << endl;
+                    cout << "Please input again." << endl; 
+                    cout << "How many more chips would you like to bet? ";
+                }
             } else {
+                // Print warning message
                 cout << "The maximum bet cannot exceed a player's all-in amount. Please input again." << endl;
                 cout << "How many more chips would you like to bet? ";
-                cin >> user_input;
             }
+
         } else {
-            firstNotMet = false;
-        }
-        //second check point
-        // restrict the user total bet to be greater than the computer's total bet   
-        if ((user_input != 0) && ((user_input + userBetTotal) < compBetTotal)) {
-            cout << "your total bet should be the same or greater than the computer's total bet" << endl;
-            cout << "Please input again." << endl; 
-            cout << "How many more chips would you like to bet? ";
-            cin >> user_input;
-        } else {
-            secondNotMet = false;
-        }
+            // Give up. anyway forward the input value to round function
+            break;
+        }   
     }
-    return user_input; 
+
+    return user_input;
 }
 
 //computer algorithm implemented 
@@ -116,7 +116,7 @@ void roundGame(int round, bool & userWin, int userDeck[], int compDeck[], int & 
     bool userFirst = userWin;
     roundLog log;
 
-    while (1) {
+    while (true) {
         if (userFirst == true){ //user's turn
             //get the user bet
             int_input = userInput(userChip, compChip, compBetTotal, userBetTotal);
