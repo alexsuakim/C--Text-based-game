@@ -16,10 +16,7 @@ int algorithm (int userCard, int userBetTotal, int compBetTotal) {
             case 0: //comp first turn 
                 if (userBetTotal == 1) { //only with user default betting info
                     //random of 3, 4, or 5
-                    compBet = rand() % 6;
-                    if (compBet < 3) { // to deal with 0, 1, 2
-                        compBet += 3;
-                    } 
+                    compBet = (rand() % 3) + 3;
                     turnNumber = 1;
                 } else { //with updated user betting info
                     //userBetTotal - compBetTotal +1 
@@ -41,10 +38,7 @@ int algorithm (int userCard, int userBetTotal, int compBetTotal) {
             case 0: //comp first turn 
                 if (userBetTotal == 1) { //only with user default betting info
                     //random of 1, 2, or 3
-                    compBet = rand() % 4;
-                    if (compBet == 0) { // to deal with 0
-                        compBet = 1;
-                    }
+                    compBet = (rand() % 3) + 1;
                     turnNumber = 1;
                 } else { //with updated user betting info
                     //bet the same Total as user and end the round
@@ -83,6 +77,9 @@ int algorithm (int userCard, int userBetTotal, int compBetTotal) {
                 turnNumber = 0;
                 break;
         } 
+    }
+    if (compBet > 20) {
+        compBet = compBet % 10;
     }
     return compBet;
 }

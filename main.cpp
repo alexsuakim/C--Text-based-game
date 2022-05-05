@@ -261,6 +261,7 @@ int main(){
     //round continues until all 20 cards are used, or until a player looses all chips.
     for (int round = 0; round < 10; round++){
         if (userChip != 0 && compChip != 0){
+            cout << "-----------------------------------------------------------------------";
             roundGame(round, userWin, userDeck, compDeck, userChip, compChip);
         } else {
             break;
@@ -278,9 +279,12 @@ int main(){
         cout << "Congratulations, you won the game!" << endl << endl;
         finalWinner = "user";
     }
-    else{
+    else if (userChip < compChip){
         cout << "The computer wins the game. Better luck next time!" << endl << endl;
         finalWinner = "computer";
+    } else { //userChip == compChip
+        cout << "Draw! That was close enough!" <<endl << endl;
+        finalWinner = "none";
     }
     
     //print the log
@@ -307,8 +311,9 @@ int main(){
         fout << "Final Winner: " << finalWinner << endl;
         fout << "User Chip: " << userChip << endl;
         fout << "computer Chip: " << compChip << endl;
+        fout << "-------------------------------" << endl;
         fout.close();
-        cout << "the result is saved" << endl;
+        cout << "the result is saved" << endl << endl;
     }
 
     cout << "do you want to call your playing results? if yes, press 'Y/y'" << endl;
