@@ -38,7 +38,7 @@
   
 5. Compilation and execution instructions. Simply put, this serves like a "Quick start" of your game.
   <Compilation>
-  g++ -pedantic-errors -std=c++11 *.cpp  -o indianpoker
+  make indianpoker
   
   <Execution>
   ./indianpoker
