@@ -28,7 +28,8 @@ int userInput (int userChip, int compChip, int compBetTotal, int userBetTotal){
     while(true){
 
         cin >> user_input;
-
+        
+        //user input validation check
         if(user_input != 0){
             // Continue to bet
             if((user_input <= userChip) && (user_input <= compChip)){
