@@ -29,7 +29,7 @@
        (4) file input/output
   - Computer betting algorithm on how to deal with the user’s cards and betting choices
        (4) implement the computer algorithm file into the main file
-  - The <main function file> calls the <computer betting algorithm function file> 
+  - The main function file calls the computer betting algorithm function file
        (5) program codes in multiple files
   - Header file, Makefile for automating compiling process
        (5) program codes in multiple files
@@ -37,8 +37,8 @@
 4. no non-standard C/C++ libraries are used.
   
 5. Compilation and execution instructions. Simply put, this serves like a "Quick start" of your game.
-  <Compilation>
+  For compilation
   make indianpoker
   
-  <Execution>
+  For execution
   ./indianpoker
