@@ -9,12 +9,12 @@
    Rules: 
   There are two players: the user and the computer.
   The user and the computer each gets a separate deck of 10 cards ranging from 1 to 10, and the players get 20 chips each.
-  One card each from the two decks are randomly chosen. The user can see the computer's card, but cannot see their own card.
-  The user will try to guess if their card is higher or lower than the computer's, and they can choose the number of chips they will bet accordingly.
+  One card each from the two decks are randomly chosen. The user can see the computer's card, but cannot see user's own card.
+  The user will try to guess if user card is higher or lower than the computer's, and user can choose the number of chips user will bet accordingly.
   The minimum bet is 1 chip. Each player can either bet higher than the other's bet, bet the same amount, or choose to give up.
-  If the players bet the same amount, the cards will be open to both players and the winner of the round will win all the chips from the round. If the two cards are eqiuvalent and there is no winner, the chips from that round will be added to the next round's bet.
+  If the players bet the same amount, the cards will be open to both players and the player with the higher number card will be the winner. The winner of the round will win all the chips from the round. If the two cards are eqiuvalent and there is no winner, the chips from that round will be added to the next round's bet.
   If the player bets more than the other's bet, then the round continues, and the other player gets the choice to either bet more, bet the same amount, or give up.
-  If the player decides to give up, then the player loses all the previous bets, regardless of the result of the cards(except for when the player's card turns out to be 10). If there were no previous bets, then the player will lose 1 chip. If the players' card turns out to be 10, then the player loses 10 chips.
+  If the player decides to give up, then the player loses all the previous bets, regardless of the result of the cards(except for when the player's card turns out to be 10). If there were no previous bets, then the player will lose 1 chip. If the players' card turns out to be 10, then the player loses 10 additional chips.
   The rounds continue until one of the players have no chips left or until the game has reached the final round (round 10).
   
   
@@ -37,6 +37,8 @@
 4. no non-standard C/C++ libraries are used.
   
 5. Compilation and execution instructions. Simply put, this serves like a "Quick start" of your game.
+  <Compilation>
+  g++ -pedantic-errors -std=c++11 *.cpp  -o indianpoker
   
-  
-  
+  <Execution>
+  ./indianpoker
