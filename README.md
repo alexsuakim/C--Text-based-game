@@ -37,7 +37,16 @@
 5. Compilation and execution instructions. Simply put, this serves like a "Quick start" of your game.
 
   For compilation
-  make indianpoker
+  $ make indianpoker
   
   For execution
-  ./indianpoker
+  $ ./indianpoker
+  
+  6. Problem Statement
+    1)why we chose Indian Poker as our topic:
+        -We chose Indian Poker as our topic because it is a well-known poker game involving generation of random decks and dynamic programming using vector. 
+        -Creating a text-based Indian Poker game requires the program to use all 5 requirements of the project, and it is an easy game to understand and enjoy.
+    2)scope of the project:
+        -Indian Poker is a game in which the user plays against the computer to earn more chips until the end of 10 rounds.
+        -Indian Poker involves two .cpp files: the main function, which is the program of the game flow, and the algorithm function, which decides how many chips the computer will bet in its turn.
+        -The play records of games are saved in a file automatically if the user chooses to save it, and the records can be accessed if the user wants to.
